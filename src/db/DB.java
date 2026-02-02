@@ -15,14 +15,16 @@ public class DB {
 	
 	public static Connection getConnection() {
 		if (conn == null) {
-			try {
-				Properties props = loadProperties();
-				String url = props.getProperty("dburl");
-				conn = DriverManager.getConnection(url, props);
-			}
-			catch (SQLException e) {
-				throw new DbException(e.getMessage());
-			}
+			String url = "jdbc:mysql://localhost:3306/coursejdbc";
+        	String user = "root";
+        	String password = "Venancio11@";
+
+        	try {
+            	conn = DriverManager.getConnection(url, user, password);
+            	System.out.println("Conectado com sucesso!");
+        	} catch (SQLException e) {
+            	e.printStackTrace();
+        	}
 		}
 		return conn;
 	}
