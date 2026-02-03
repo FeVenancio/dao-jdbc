@@ -71,7 +71,7 @@ public class SellerDaoJDBC implements SellerDao {
         try {
             st = conn.prepareStatement(
 
-                "UPDATE SELLER "
+                "UPDATE seller "
                 + "SET Name = ?, Email = ?, BirthDate = ?, BaseSalary = ?, DepartmentId = ? "
                 + "WHERE Id = ?");
             st.setString(1, obj.getName());
